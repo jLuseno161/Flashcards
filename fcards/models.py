@@ -23,3 +23,14 @@ class Flashcard(models.Model):
     description =models.TextField()
     category = models.ForeignKey(Category,on_delete=models.CASCADE,default='0')
     date= models.DateField()
+
+    def __str__(self):
+        return self.name
+
+
+    def save_flashcard(self):
+        self.save()
+
+    def delete_flashcard(self):
+        self.delete()    
+
