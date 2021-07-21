@@ -18,8 +18,6 @@ class Category(models.Model):
 
 class Flashcard(models.Model):
 
-
-    name =models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     description =models.TextField()

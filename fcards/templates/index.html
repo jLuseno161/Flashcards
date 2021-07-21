@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+{% load static %}
+{% load bootstrap3 %}
+{% block content %}
+
+<h1 class="text-center">FlashCards Project</h1>
+
+<div class="container">
+    <div class="col-md-4">
+        <div class="card d-flex align-items-center justify-content-center">
+            <div id="term">
+                <h2>Title</h2>
+                <h5>Design</h5>
+            </div>
+            <div id="definition">
+                <h2>Description</h2>
+                <h5>An object-oriented computer programming language commonly used to create interactive effects within
+                    web browsers.</h5>
+            </div>
+            <div>
+                <p>By Kira Monday</p>
+                <p>12th May 2017</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card d-flex align-items-center justify-content-center">
+            <div id="term">
+                <h2>Title</h2>
+                <h5>Content</h5>
+            </div>
+            <div id="definition">
+                <h2>Description</h2>
+                <h5>Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit amet, consectetur adip ..</h5>
+            </div>
+            <div>
+                <p>By Joy Luseno</p>
+                <p>12th May 2017</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+{{block.super}}
+<script type="text/javascript" src="{%static 'js/index.js'%}"></script>
+{% endblock %}

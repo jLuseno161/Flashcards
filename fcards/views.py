@@ -6,8 +6,10 @@ from fcards.forms import SignUpForm
 
 
 @login_required(login_url='/accounts/login/')
+# def index(request):
+#     return HttpResponse('Hi there')
 def index(request):
-    return HttpResponse('Hi there')
+    return render(request, 'index.html')
 
 def signup(request):
     print('here')
