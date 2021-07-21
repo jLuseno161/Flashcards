@@ -1,5 +1,5 @@
 $(document).ready(function (){
-    $(".card").click(function(){
+    $(".{{card.id}}").click(function(){
         $("#term, #definition").toggle();
     })
 

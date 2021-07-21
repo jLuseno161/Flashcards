@@ -1,3 +1,4 @@
+from fcards.models import Flashcard
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
@@ -9,7 +10,10 @@ from fcards.forms import SignUpForm
 # def index(request):
 #     return HttpResponse('Hi there')
 def index(request):
-    return render(request, 'index.html')
+
+    card = Flashcard.objects.all()
+
+    return render(request, 'index.html',{'card': card})
 
 def signup(request):
     print('here')

@@ -6,23 +6,27 @@
 <h1 class="text-center">FlashCards Project</h1>
 
 <div class="container">
+    {%for card in card%}
     <div class="col-md-4">
-        <div class="card d-flex align-items-center justify-content-center">
+        <div class="card d-flex align-items-center justify-content-center {{card.id}}">
             <div id="term">
+                {{card.id}}
                 <h2>Title</h2>
-                <h5>Design</h5>
+                <h5>{{card.title}}</h5>
             </div>
             <div id="definition">
                 <h2>Description</h2>
-                <h5>An object-oriented computer programming language commonly used to create interactive effects within
-                    web browsers.</h5>
+                <h5>{{card.description}}</h5>
             </div>
             <div>
-                <p>By Kira Monday</p>
-                <p>12th May 2017</p>
+                <p>By {{card.user.username}}</p>
+                <p>{{card.category}}</p>
+                <p>{{card.date}}</p>
+
             </div>
         </div>
     </div>
+    {%endfor%}
     <div class="col-md-4">
         <div class="card d-flex align-items-center justify-content-center">
             <div id="term">
