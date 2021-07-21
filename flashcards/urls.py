@@ -19,9 +19,9 @@ from django.contrib.auth import views
 from django.urls import path
 
 urlpatterns = [
-    path(r'^admin/', admin.site.urls),
     path('admin/', admin.site.urls),
     path('',include('fcards.urls')),  
     path(r'accounts/', include('registration.backends.simple.urls')),
     path(r'logout/', views.LogoutView.as_view(), {"next_page": 'accounts/signup'}), 
+    
 ]
