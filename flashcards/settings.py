@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fcards.apps.FcardsConfig',
-    'bootstrap3'
+    'bootstrap3',
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
