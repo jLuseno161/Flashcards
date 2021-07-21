@@ -1,4 +1,6 @@
+from fcards.models import *
 from django.contrib import admin
 
 # Register your models here.
-admin.register.site()
+admin.site.register(Category)
+admin.site.register(Flashcard)

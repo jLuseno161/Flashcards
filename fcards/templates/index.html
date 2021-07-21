@@ -1,4 +1,20 @@
 {%extends 'base.html'%}\
 {%block content%}
     <h1>FlashCards Project</h1>
+    {%for flashcard in flashcards%}
+    <h1>{{flashcard.name}}<h1>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Panel Heading</h2>
+                    <div class="panel panel-default">
+                    <div class="panel-heading">Panel Heading</div>
+                    <div class="panel-body">Panel Content</div>
+                    </div>
+                </div>
+            </div>        
+          </div>
+
+    {%endfor%}
 {%endblock%}
