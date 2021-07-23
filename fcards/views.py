@@ -14,13 +14,9 @@ from rest_framework import status
 
 
 @login_required(login_url='/accounts/login/')
-# def index(request):
-#     return HttpResponse('Hi there')
 def index(request):
+    return HttpResponse('Hi there')
 
-    card = Flashcard.objects.all()
-
-    return render(request, 'index.html',{'card': card})
 
 def signup(request):
     print('here')
