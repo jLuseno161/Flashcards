@@ -10,3 +10,12 @@ class NewPostForm(forms.ModelForm):
         widgets={
 
         }
+        
+class SignUpForm(UserCreationForm):
+    full_name = forms.CharField(max_length=50, required=False)
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password1', 'password2', )
+

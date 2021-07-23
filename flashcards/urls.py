@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r"",include('fcards.urls')),
     url(r'^api/', include((router.urls, 'flashcard'), namespace='fcards')),
+    path(r'accounts/', include('registration.backends.simple.urls')),
+    path(r'logout/', views.LogoutView.as_view(), {"next_page": 'accounts/signup'}), 
 ]

@@ -2,6 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from .models import *
 import enum
+from .models import Category,Flashcard
 
 class FlashcardSerializer(serializers.ModelSerializer):
     class Meta:
@@ -38,3 +39,15 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
 
         return user        
+class CategorySerializer(serializers.ModelSerializer):
+   
+    class Meta:
+        model = Category
+        fields = ['id','category_name']
+
+class CardSerializer(serializers.ModelSerializer):
+    user = UserSerializer(many=False, read_only=True)
+    category = CategorySerializer(many=False, read_only=True)
+    class Meta:
+        model = Flashcard
+        fields = ['id','title','user', 'description','category','date']
