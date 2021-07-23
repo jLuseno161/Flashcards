@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+from fcards.urls import router
+from django.urls import path
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r"",include('fcards.urls'))
+    url(r"",include('fcards.urls')),
+    url(r'^api/', include((router.urls, 'flashcard'), namespace='fcards')),
 ]
